@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    section {
+      position: relative;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 40px;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.5;
+      z-index: -1;
+    }
+
+    .center-image {
+      width: 300px;
+      height: 300px;
+      border: 2px solid white;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hover-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border: 2px solid white;
+      transition: transform 0.3s ease, background 0.3s ease;
+      width: 80%;
+      z-index: 2;
+      position: relative;
+      pointer-events: auto;
+      text-align: center;
+    }
+
+    .hover-box:hover {
+      transform: scale(1.02);
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-box {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid white;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .project-box img {
+      width: 100%;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .project-box:hover {
+      transform: scale(1.05);
+    }
+
+    .project-box:hover img {
+      transform: scale(1.1);
+    }
+
+    .home-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .intro-text {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border: 2px solid white;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    .intro-text h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .intro-text p {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Home Section with Image and Intro Text -->
+  <section style="--bg:url('introduction.gif');" id="home">
+    <style>#home::before { background-image: var(--bg); }</style>
+    <div class="home-container">
+      <div class="center-image" style="background-image: url('profile.jpg');"></div>
+      <div class="intro-text">
+        <h1>Mrinmayi Verma</h1>
+        <p>An aspiring Computational Neuroscientist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section style="--bg:url('bg.gif');" id="about">
+    <style>#about::before { background-image: var(--bg); }</style>
+    <div class="hover-box">
+      <h2>About Me</h2>
+      <p>
+        ’m a passionate undergraduate aspiring to revolutionize computational neuroscience. With a robust background
+in full-stack development, design thinking, machine learning, data analytics, and artificial intelligence, I combine
+technical expertise with a genuine love for neural dynamics and computational biology. I excel in tackling complex
+problems and thrive on creating innovative, user-centric solutions that bridge technology with reflective design.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section style="--bg:url('bg.gif');" id="skills">
+    <style>#skills::before { background-image: var(--bg); }</style>
+    <div class="hover-box">
+      <h2>Skills</h2>
+      <p>
+        Proficient in:
+        <br>Languages: C,Java, Python, SQL
+        <br>Tools: Git, VSCode, MySQL, Canva, MongoDB, Figma
+        <br>Domains: Design Thinking, Data Analytics, Artificial
+        Intelligence, Machine Learning, Artificial Neural
+        Network, Computational Biology
+      </p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section style="--bg:url('bg.gif');" id="projects">
+    <style>#projects::before { background-image: var(--bg); }</style>
+    <div class="hover-box">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-box"><img src="project1.png" alt="Planit - Educational Platform"></div>
+        <div class="project-box"><img src="project2.jpeg" alt="Statify - Statistical Library"></div>
+        <div class="project-box"><img src="project3.png" alt="NeuroSim-Computational Neuroscience"></div>
+        <div class="project-box"><img src="project4.png" alt="Scheduling Algorithm Calculator"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Me -->
+  <section style="--bg:url('contactme.jpg');" id="contact">
+    <style>#contact::before { background-image: var(--bg); }</style>
+    <div class="hover-box">
+      <h2>Contact Me</h2>
+      <p>Email: mrinmayi.anand.verma@gmail.com</p>
+      <p>Phone: +123 456 7890</p>
+      <p>Feel free to reach out for collaborations, freelance work, or just to connect!</p>
+    </div>
+  </section>
+</body>
+</html>
